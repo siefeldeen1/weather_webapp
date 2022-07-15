@@ -1,0 +1,113 @@
+.body{
+    background-image:url("../../img/tom-barrett-hgGplX3PFBg-unsplash.jpg") ;
+    background-size: 100%;
+    width: 100vw;
+    height:100vh;
+    
+}
+.temp{
+color: white;
+font-size: 90px;
+font-weight: 600;
+}
+.skeley{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    
+}
+.state{
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-left: 8px;
+margin-bottom: 2px;
+font-size: 20px;
+}
+.lower_part{
+display: flex;
+align-items: center;
+color: white;
+margin-left: 100px;
+margin-bottom: 60px;
+}
+
+
+.loc__time{
+
+    font-size: 38px;
+    font-weight: 500;
+margin-left: 7px;
+margin-top: 5px;
+}
+
+
+.loader_cont{
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader{
+    border-right: 6px solid #1c1c1c;
+    border-left: 6px solid red;
+    
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: loader infinite 1s ;
+    transition: 4s;
+}
+
+
+@keyframes loader {
+
+    to{
+        transform: rotate(360deg);
+    }
+    
+}
+
+
+.weather_cont{
+color: white;
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 0.1rem 4.6rem;
+  border-radius: 1rem;
+  background-color: rgba(235, 225, 225, 0.3);
+  backdrop-filter: blur(2px);
+  box-sizing: border-box;
+  min-width: 30%;
+  min-height: 38%;
+  overflow: auto;
+margin-bottom: 110px;
+margin-left: 110px;
+}
+
+
+.weather_info{
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin-bottom: 30px;
+}
+
+
+
+.big_bro{
+
+display: flex;
+flex-direction: column;
+justify-content:center;
+align-items: center;
+height: 100%;
+
+}
