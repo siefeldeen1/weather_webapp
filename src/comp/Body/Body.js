@@ -8,24 +8,38 @@ function Body() {
     const [isloaded, setisloaded] = useState(false)        
 
     useEffect(() => {
- 
-    fetch("http://ip-api.com/json/")
-    .then((res) => res.json())
-    .then((json) => {
-        
-        
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${json.lat}&lon=${json.lon}&appid=dc56de3d5c483721d0ce0c28c8c39093&units=metric`)
-        .then((response)=>response.json())
-        .then((data)=>{
-            console.log(data);
-            setinfo(data);
-            setisloaded(true)
 
+
+        
+    fetch("https://api.ipify.org/?format=json")
+    .then((res_ip) => res_ip.json())
+    .then((ip) =>{
+
+        fetch(`https://ipinfo.io/${ip.ip}?token=d9fb15ade58e57`)
+        .then((res) => res.json())
+        .then((json) => {
+
+            const loc = json["loc"].split(",")
+
+            console.log(loc);
             
-           
-        })
+            
+            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${loc[1]}&lon=${loc[0]}&appid=dc56de3d5c483721d0ce0c28c8c39093&units=metric`)
+            .then((response)=>response.json())
+            .then((data)=>{
+                console.log(data);
+                setinfo(data);
+                setisloaded(true)
     
+                
+               
+            })
+        
+        })
+
     })
+ 
+
 
 
     
